@@ -2,98 +2,67 @@
   "last_updated": "2026-09-18",
   "accounts": [
     {
-      "name": "LHB You",
+      "name": "B You MAX",
       "bank": "LH Bank",
       "color": "bg-blue-600",
       "tiers": [
-        { "max": 100000, "rate": 6.00 },
-        { "max": 1000000, "rate": 1.75 },
-        { "max": 999999999, "rate": 0.55 }
-      ]
-    },
-    {
-      "name": "KKP Start Up",
-      "bank": "KKP (เกียรตินาคินภัทร)",
-      "color": "bg-purple-600",
-      "tiers": [
-        { "max": 50000, "rate": 4.00 },
-        { "max": 1000000, "rate": 1.50 },
-        { "max": 999999999, "rate": 0.50 }
+        { "max": 10000, "rate": 3.00 },
+        { "max": 100000000, "rate": 0.25 }
       ]
     },
     {
       "name": "Dime! Save",
-      "bank": "KKP (เกียรตินาคินภัทร)",
+      "bank": "KKP",
       "color": "bg-teal-500",
       "tiers": [
         { "max": 10000, "rate": 3.00 },
         { "max": 1000000, "rate": 1.50 },
-        { "max": 999999999, "rate": 0.50 }
+        { "max": 99999999, "rate": 0.50 }
       ]
     },
     {
-      "name": "CIMB Chill D",
-      "bank": "CIMB Thai",
-      "color": "bg-red-600",
+      "name": "Me Save",
+      "bank": "TTB",
+      "color": "bg-sky-500",
       "tiers": [
-        { "max": 50000, "rate": 2.88 },
-        { "max": 100000, "rate": 1.88 },
-        { "max": 999999999, "rate": 0.88 }
+        { "max": 2000000, "rate": 1.50 },
+        { "max": 99999999, "rate": 0.25 }
+      ]
+    },
+    {
+      "name": "SCB E-Passbook (อีซี่)",
+      "bank": "SCB",
+      "color": "bg-purple-600",
+      "tiers": [
+        { "max": 1000000, "rate": 1.50 },
+        { "max": 99999999, "rate": 0.50 }
       ]
     },
     {
       "name": "Kept (Grow)",
-      "bank": "Krungsri (กรุงศรี)",
-      "color": "bg-yellow-500",
+      "bank": "Krungsri",
+      "color": "bg-amber-500",
       "tiers": [
-        { "max": 5000000, "rate": 2.22 },
-        { "max": 999999999, "rate": 0.25 }
+        { "max": 5000000, "rate": 1.35 },
+        { "max": 99999999, "rate": 0.50 }
       ]
     },
     {
-      "name": "TTB ME save",
-      "bank": "TTB (ทหารไทยธนชาต)",
+      "name": "Krungthai NEXT Savings",
+      "bank": "Krungthai",
       "color": "bg-blue-500",
       "tiers": [
-        { "max": 100000, "rate": 2.20 },
-        { "max": 1000000, "rate": 1.60 },
-        { "max": 999999999, "rate": 1.20 }
-      ]
-    },
-    {
-      "name": "Krungthai Next (e-Savings)",
-      "bank": "Krungthai (กรุงไทย)",
-      "color": "bg-sky-500",
-      "tiers": [
-        { "max": 1000000, "rate": 1.50 },
-        { "max": 999999999, "rate": 0.50 }
-      ]
-    },
-    {
-      "name": "SCB Easy E-Saving",
-      "bank": "SCB (ไทยพาณิชย์)",
-      "color": "bg-indigo-600",
-      "tiers": [
-        { "max": 1000000, "rate": 1.50 },
-        { "max": 999999999, "rate": 0.50 }
+        { "max": 500000, "rate": 1.25 },
+        { "max": 99999999, "rate": 0.25 }
       ]
     },
     {
       "name": "K-eSavings",
-      "bank": "KBank (กสิกรไทย)",
+      "bank": "KBank",
       "color": "bg-emerald-600",
       "tiers": [
-        { "max": 1000000, "rate": 1.50 },
-        { "max": 999999999, "rate": 0.50 }
-      ]
-    },
-    {
-      "name": "BBL e-Savings",
-      "bank": "Bangkok Bank (กรุงเทพ)",
-      "color": "bg-blue-900",
-      "tiers": [
-        { "max": 1000000, "rate": 1.50 },
-        { "max": 999999999, "rate": 0.50 }
+        { "max": 500000, "rate": 1.25 },
+        { "max": 99999999, "rate": 0.35 }
       ]
     }
   ]
