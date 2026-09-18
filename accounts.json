@@ -1,0 +1,54 @@
+{
+  "last_updated": "2026-09-18",
+  "accounts": [
+    {
+      "name": "Dime! Save",
+      "bank": "KKP (เกียรตินาคินภัทร)",
+      "color": "bg-teal-500",
+      "tiers": [
+        { "max": 10000, "rate": 3.00 },
+        { "max": 1000000, "rate": 1.50 },
+        { "max": 999999999, "rate": 0.50 }
+      ]
+    },
+    {
+      "name": "KKP Start Up",
+      "bank": "KKP (เกียรตินาคินภัทร)",
+      "color": "bg-purple-600",
+      "tiers": [
+        { "max": 50000, "rate": 4.00 },
+        { "max": 1000000, "rate": 1.50 },
+        { "max": 999999999, "rate": 0.50 }
+      ]
+    },
+    {
+      "name": "LHB You",
+      "bank": "LH Bank (แลนด์ แอนด์ เฮ้าส์)",
+      "color": "bg-blue-600",
+      "tiers": [
+        { "max": 100000, "rate": 6.00 },
+        { "max": 1000000, "rate": 1.75 },
+        { "max": 999999999, "rate": 0.55 }
+      ]
+    },
+    {
+      "name": "Kept (Grow)",
+      "bank": "Krungsri (กรุงศรี)",
+      "color": "bg-yellow-500",
+      "tiers": [
+        { "max": 5000000, "rate": 2.22 },
+        { "max": 999999999, "rate": 0.25 }
+      ]
+    },
+    {
+      "name": "TTB ME save",
+      "bank": "TTB (ทหารไทยธนชาต)",
+      "color": "bg-blue-500",
+      "tiers": [
+        { "max": 100000, "rate": 2.20 },
+        { "max": 1000000, "rate": 1.60 },
+        { "max": 999999999, "rate": 1.20 }
+      ]
+    }
+  ]
+}
