@@ -2,7 +2,7 @@
   "last_updated": "2026-09-18",
   "accounts": [
     {
-      "name": "B You MAX",
+      "name": "LH Bank",
       "bank": "LH Bank",
       "color": "bg-blue-600",
       "tiers": [
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "name": "Dime! Save",
+      "name": "KKP",
       "bank": "KKP",
       "color": "bg-teal-500",
       "tiers": [
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "name": "Me Save",
+      "name": "TTB",
       "bank": "TTB",
       "color": "bg-sky-500",
       "tiers": [
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "name": "SCB E-Passbook (อีซี่)",
+      "name": "SCB",
       "bank": "SCB",
       "color": "bg-purple-600",
       "tiers": [
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "name": "Kept (Grow)",
+      "name": "Krungsri",
       "bank": "Krungsri",
       "color": "bg-amber-500",
       "tiers": [
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "name": "Krungthai NEXT Savings",
+      "name": "Krungthai",
       "bank": "Krungthai",
       "color": "bg-blue-500",
       "tiers": [
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "name": "K-eSavings",
+      "name": "KBank",
       "bank": "KBank",
       "color": "bg-emerald-600",
       "tiers": [
