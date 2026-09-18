@@ -3,7 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>เครื่องมือเปรียบเทียบและจัดพอร์ตดอกเบี้ยเงินฝากดิจิทัล (Personal Tool)</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>thai-savings-calc | เครื่องมือคำนวณและจัดพอร์ตดอกเบี้ยเงินฝากดิจิทัล</title>
+  <meta name="description" content="thai-savings-calc เว็บเครื่องมือเปรียบเทียบดอกเบี้ยเงินฝากดิจิทัลแบบขั้นบันได และสูตรกระจายเงินฝาก (Split Deposit) คำนวณภาษีดอกเบี้ย 15% ฟรี" />
+  <meta name="keywords" content="thai-savings-calc, thai savings calc, คำนวณดอกเบี้ย, เงินฝากดิจิทัล, ดอกเบี้ยเงินฝากสูง, จัดพอร์ตเงินออม, เปรียบเทียบดอกเบี้ยธนาคาร" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rookiekrit6-dotcom.github.io/thai-savings-calc/" />
+
+  <!-- Open Graph / Facebook / X (Social Preview) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rookiekrit6-dotcom.github.io/thai-savings-calc/" />
+  <meta property="og:title" content="thai-savings-calc - เครื่องมือคำนวณและจัดพอร์ตดอกเบี้ยเงินฝากดิจิทัล" />
+  <meta property="og:description" content="เปรียบเทียบดอกเบี้ยขั้นบันไดทุกธนาคาร พร้อมสูตรกระจายเงินฝากเพื่อผลตอบแทนสูงสุด ใช้งานฟรี" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Search Console Verification (ใส่โค้ดที่ได้จาก Google ที่นี่ในอนาคต) -->
+  <!-- <meta name="google-site-verification" content="ใส่รหัสยืนยันจาก_google_search_console" /> -->
+
+  <!-- Structured Data สำหรับ Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "thai-savings-calc",
+    "url": "https://rookiekrit6-dotcom.github.io/thai-savings-calc/",
+    "description": "เครื่องมือเปรียบเทียบและคำนวณดอกเบี้ยบัญชีเงินฝากดิจิทัลแบบขั้นบันได พร้อมสูตรกระจายเงินฝากอัตโนมัติ",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -20,7 +50,6 @@
       position: relative;
     }
 
-    /* === STREAMSCHEME ANIMATED BACKGROUND === */
     .bg-ambient-container {
       position: fixed;
       top: 0;
@@ -102,9 +131,8 @@
       100% { transform: translate3d(-65%, -35%, 0) scale(1.1); }
     }
 
-    /* กระจกเงา Glassmorphism */
     .glass-card {
-      background: rgba(18, 24, 38, 0.8);
+      background: rgba(18, 24, 38, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -114,7 +142,6 @@
 </head>
 <body class="min-h-screen py-10 px-4 sm:px-6 flex flex-col justify-between relative">
 
-  <!-- Glow Orbs & Grid Overlay -->
   <div class="bg-ambient-container">
     <div class="glow-orb orb-purple"></div>
     <div class="glow-orb orb-pink"></div>
@@ -123,10 +150,9 @@
   </div>
 
   <div class="max-w-4xl mx-auto w-full relative z-10">
-    <!-- ส่วนหัว -->
     <header class="text-center mb-8">
       <div class="inline-block px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold rounded-full mb-3 backdrop-blur-sm">
-        🛠️ เครื่องมือคำนวณส่วนบุคคล (Non-Commercial Tool)
+        🛠️ thai-savings-calc (Personal Utility Tool)
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight drop-shadow-md">
         เครื่องมือคำนวณดอกเบี้ยเงินฝากดิจิทัล
@@ -136,7 +162,6 @@
       </p>
       <div id="last-update" class="text-xs text-slate-300 mt-1">อัปเดตข้อมูลล่าสุด: 2026-09-18</div>
       
-      <!-- ปุ่มคู่มือการใช้งาน -->
       <div class="mt-4">
         <button onclick="toggleGuide(true)" class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 hover:bg-white/20 text-indigo-200 hover:text-white text-xs font-medium rounded-full shadow-sm border border-white/15 transition backdrop-blur-md">
           💡 วิธีใช้งานเว็บเบื้องต้น
@@ -144,7 +169,7 @@
       </div>
     </header>
 
-    <!-- ช่องกรอกจำนวนเงิน และ ตัวเลือกภาษี -->
+    <!-- ช่องกรอกจำนวนเงิน -->
     <div class="glass-card rounded-2xl p-6 mb-6">
       <label for="deposit-amount" class="block text-sm font-semibold text-slate-100 mb-2">จำนวนเงินที่ต้องการฝาก (บาท)</label>
       <div class="relative rounded-xl">
@@ -160,7 +185,6 @@
         <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-300 font-medium">บาท</div>
       </div>
       
-      <!-- ปุ่มตัวเลือกยอดเงินด่วน -->
       <div class="flex flex-wrap gap-2 mt-4">
         <button onclick="setAmount(10000)" class="px-3.5 py-1.5 bg-slate-800/90 hover:bg-indigo-600 hover:text-white rounded-lg text-xs font-medium text-slate-200 border border-slate-700 transition">10,000</button>
         <button onclick="setAmount(50000)" class="px-3.5 py-1.5 bg-slate-800/90 hover:bg-indigo-600 hover:text-white rounded-lg text-xs font-medium text-slate-200 border border-slate-700 transition">50,000</button>
@@ -169,7 +193,6 @@
         <button onclick="setAmount(1000000)" class="px-3.5 py-1.5 bg-slate-800/90 hover:bg-indigo-600 hover:text-white rounded-lg text-xs font-medium text-slate-200 border border-slate-700 transition">1,000,000</button>
       </div>
 
-      <!-- สวิตช์คำนวณหักภาษี 15% -->
       <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
         <div>
           <span class="text-sm font-semibold text-slate-100 block">หักภาษีดอกเบี้ยเงินฝาก 15%</span>
@@ -182,7 +205,7 @@
       </div>
     </div>
 
-    <!-- สวิตช์เลือกโหมดการแสดงผล (USP Feature) -->
+    <!-- ปุ่มเลือกโหมด -->
     <div class="flex rounded-xl p-1 bg-slate-900/80 border border-slate-800 mb-6 backdrop-blur-md">
       <button id="tab-compare" onclick="switchMode('compare')" class="flex-1 py-2.5 px-4 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 bg-indigo-600 text-white shadow-md">
         📊 เปรียบเทียบรายธนาคาร (ฝากที่เดียว)
@@ -192,7 +215,7 @@
       </button>
     </div>
 
-    <!-- โหมด 1: ตารางเปรียบเทียบเดี่ยว (เดิม) -->
+    <!-- โหมดเปรียบเทียบ -->
     <div id="section-compare" class="glass-card rounded-2xl overflow-hidden mb-8">
       <div class="px-6 py-4 border-b border-slate-700/80 bg-slate-800/50 flex justify-between items-center">
         <h2 class="font-bold text-white text-base">ผลการเปรียบเทียบดอกเบี้ยต่อปี</h2>
@@ -217,9 +240,8 @@
       </div>
     </div>
 
-    <!-- โหมด 2: สูตรกระจายเงินฝากอัจฉริยะ (Optimizer View) -->
+    <!-- โหมด Optimizer -->
     <div id="section-optimizer" class="hidden space-y-6 mb-8">
-      <!-- การ์ดสรุปยอดดอกเบี้ยพอร์ต -->
       <div class="glass-card rounded-2xl p-6 border-indigo-500/30 bg-gradient-to-br from-slate-900/90 via-indigo-950/30 to-slate-900/90">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
@@ -237,25 +259,43 @@
         </div>
       </div>
 
-      <!-- รายการจัดสรรเงินฝากแต่ละบัญชี -->
       <div class="glass-card rounded-2xl p-6">
         <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
           📝 แผนการกระจายเงินฝากที่แนะนำ
         </h3>
-        <div id="opt-plan-list" class="space-y-3">
-          <!-- แผนจัดสรรเงินจะถูกสร้างโดย JS -->
-        </div>
+        <div id="opt-plan-list" class="space-y-3"></div>
       </div>
     </div>
+
+    <!-- ส่วนเนื้อหา SEO & FAQ ให้ Google ตรวจเจอคำค้นหา -->
+    <section class="glass-card rounded-2xl p-6 mb-8 text-slate-300 space-y-4 text-sm leading-relaxed">
+      <h2 class="text-lg font-bold text-white mb-2">เกี่ยวกับ thai-savings-calc</h2>
+      <p>
+        <strong class="text-indigo-300">thai-savings-calc</strong> คือเว็บเครื่องมือฟรีสำหรับคำนวณและเปรียบเทียบดอกเบี้ยบัญชีเงินฝากออมทรัพย์ดิจิทัลของธนาคารในประเทศไทย โดยเน้นการคำนวณแบบขั้นบันได (Tiered Interest Rate) ที่แท้จริง เพื่อช่วยให้ผู้ฝากเงินวางแผนจัดสรรเงินออมให้ได้ผลตอบแทนสูงที่สุด
+      </p>
+      
+      <div class="pt-2">
+        <h3 class="font-semibold text-white mb-1">คำถามที่พบบ่อย (FAQ)</h3>
+        <div class="space-y-2 mt-2">
+          <div>
+            <span class="text-white font-medium">Q: ภาษีดอกเบี้ยเงินฝาก 15% คิดอย่างไร?</span>
+            <p class="text-slate-400 text-xs mt-0.5">A: หากได้รับดอกเบี้ยเงินฝากออมทรัพย์ทุกธนาคารรวมกันเกิน 20,000 บาทต่อปี สรรพากรจะหักภาษี ณ ที่จ่าย 15% จากดอกเบี้ยทั้งหมด เว็บ thai-savings-calc มีฟังก์ชันจำลองหักภาษีนี้ให้ทันที</p>
+          </div>
+          <div>
+            <span class="text-white font-medium">Q: สูตรกระจายเงินฝาก (Split Deposit) ทำงานอย่างไร?</span>
+            <p class="text-slate-400 text-xs mt-0.5">A: ระบบจะคำนวณกระจายเงินของคุณไปยังบัญชีที่ให้อัตราดอกเบี้ยสูงสุดก่อนจนเต็มเพดาน แล้วจึงนำเงินส่วนที่เหลือไปฝากในบัญชีถัดไป เพื่อให้ผลตอบแทนรวมทั้งพอร์ตได้ดอกเบี้ยมากที่สุด</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <!-- ส่วนท้าย: ข้อความปฏิเสธความรับผิดชอบ (Disclaimer) -->
   <footer class="max-w-4xl mx-auto w-full text-center text-xs text-slate-300 px-4 mt-4 space-y-1.5 relative z-10 leading-relaxed">
-    <p>⚠️ <strong class="text-slate-200">ข้อจำกัดความรับผิดชอบทางกฎหมาย:</strong> เว็บไซต์นี้จัดทำขึ้นเพื่อเป็นเครื่องมือคำนวณและจำลองผลตอบแทนส่วนบุคคลเท่านั้น <strong class="text-slate-200">มิใช่เว็บไซต์ทางการของสถาบันการเงินใดๆ</strong> และไม่มีส่วนเกี่ยวข้องกับการรับฝากเงิน อัตราดอกเบี้ยและเงื่อนไขอาจมีการเปลี่ยนแปลงตามประกาศของแต่ละธนาคาร ผู้ใช้งานโปรดตรวจสอบความถูกต้องโดยตรงกับเว็บไซต์ทางการของธนาคารก่อนตัดสินใจทำธุรกรรมทางการเงินทุกครั้ง</p>
-    <p class="text-slate-400">© Thai Savings Calculator. สงวนลิขสิทธิ์สำหรับเครื่องมือคำนวณส่วนบุคคล</p>
+    <p>⚠️ <strong class="text-slate-200">ข้อจำกัดความรับผิดชอบทางกฎหมาย:</strong> เว็บไซต์นี้จัดทำขึ้นเพื่อเป็นเครื่องมือคำนวณและจำลองผลตอบแทนส่วนบุคคลเท่านั้น <strong class="text-slate-200">มิใช่เว็บไซต์ทางการของสถาบันการเงินใดๆ</strong> และไม่มีส่วนเกี่ยวข้องกับการรับฝากเงิน อัตราดอกเบี้ยและเงื่อนไขอาจมีการเปลี่ยนแปลงตามประกาศของแต่ละธนาคาร</p>
+    <p class="text-slate-400">© 2026 thai-savings-calc. All rights reserved.</p>
   </footer>
 
-  <!-- Modal คู่มือการใช้งาน -->
+  <!-- Modal คู่มือ -->
   <div id="guide-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
     <div class="glass-card bg-slate-900/95 rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-700">
       <div class="flex justify-between items-center mb-4">
@@ -273,7 +313,7 @@
         </div>
         <div class="flex gap-3 items-start">
           <span class="flex-shrink-0 w-6 h-6 bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 rounded-full flex items-center justify-center font-bold text-xs">3</span>
-          <p><strong class="text-white">โหมดสูตรกระจายเงินฝาก:</strong> ระบบจะคำนวณแบ่งเงินไปหยอดในบัญชีที่ดอกเบี้ยสูงสุดให้เต็มเพดาน เพื่อให้ได้เงินดอกเบี้ยรวมสูงที่สุด</p>
+          <p><strong class="text-white">โหมดสูตรกระจายเงินฝาก:</strong> ระบบจะคำนวณแบ่งเงินไปหยอดในบัญชีที่ดอกเบี้ยสูงสุดให้เต็มเพดาน</p>
         </div>
         <div class="flex gap-3 items-start">
           <span class="flex-shrink-0 w-6 h-6 bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 rounded-full flex items-center justify-center font-bold text-xs">4</span>
@@ -345,7 +385,6 @@
     }
 
     function calculateOptimizer(totalAmount, isTaxDeducted) {
-      // แตกทุก Tier ของทุกธนาคารออกมาเป็นก้อนๆ
       let availableSegments = [];
       accountsData.forEach(acc => {
         let prevLimit = 0;
@@ -363,7 +402,6 @@
         });
       });
 
-      // จัดเรียงก้อน Tier ตามอัตราดอกเบี้ยจากสูงที่สุดลงไป
       availableSegments.sort((a, b) => b.rate - a.rate);
 
       let remaining = totalAmount;
@@ -392,7 +430,6 @@
         }
       }
 
-      // ตรวจสอบเงื่อนไขภาษีรวม
       let netInterest = totalPortfolioInterest;
       if (isTaxDeducted && netInterest > 20000) {
         netInterest = netInterest * 0.85;
@@ -410,7 +447,6 @@
       const amount = parseFloat(document.getElementById('deposit-amount').value) || 0;
       const isTaxDeducted = document.getElementById('tax-toggle').checked;
       
-      // 1. คำนวณแบบเดิม (เปรียบเทียบรายธนาคาร)
       const tbody = document.getElementById('result-tbody');
       const results = accountsData.map(acc => {
         let interest = calculateTierInterest(amount, acc.tiers);
@@ -448,7 +484,6 @@
         </tr>
       `).join('');
 
-      // 2. คำนวณโหมดจัดพอร์ต (Optimizer)
       const optResult = calculateOptimizer(amount, isTaxDeducted);
       document.getElementById('opt-total-interest').innerText = `฿${optResult.totalInterest.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
       document.getElementById('opt-avg-rate').innerText = `${optResult.effectiveRate.toFixed(2)}%`;
