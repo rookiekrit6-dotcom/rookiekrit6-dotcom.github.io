@@ -73,7 +73,7 @@
         <table class="w-full text-left border-collapse">
           <thead>
             <tr class="text-xs font-semibold text-slate-400 uppercase border-b border-slate-100 bg-slate-50/30">
-              <th class="py-3 px-6">ธนาคาร / บัญชี</th>
+              <th class="py-3 px-6">ธนาคาร</th>
               <th class="py-3 px-6 text-right">ดอกเบี้ยเฉลี่ย</th>
               <th class="py-3 px-6 text-right">ดอกเบี้ยรับต่อปี</th>
               <th class="py-3 px-6 text-right">ดอกเบี้ยรับต่อเดือน</th>
@@ -81,7 +81,7 @@
           </thead>
           <tbody id="result-tbody" class="divide-y divide-slate-100 text-sm">
             <tr>
-              <td colspan="4" class="text-center py-8 text-slate-400">กำลังโหลดข้อมูลบัญชีเงินฝาก...</td>
+              <td colspan="4" class="text-center py-8 text-slate-400">กำลังโหลดข้อมูลธนาคาร...</td>
             </tr>
           </tbody>
         </table>
@@ -89,7 +89,7 @@
     </div>
   </div>
 
-  <!-- ส่วนท้าย: ข้อความปฏิเสธความรับผิดชอบ (Disclaimer) รัดกุมตามกฎหมาย -->
+  <!-- ส่วนท้าย: ข้อความปฏิเสธความรับผิดชอบ (Disclaimer) -->
   <footer class="max-w-4xl mx-auto w-full text-center text-xs text-slate-500 px-4 mt-4 space-y-1">
     <p>⚠️ <strong>ข้อจำกัดความรับผิดชอบทางกฎหมาย:</strong> เว็บไซต์นี้จัดทำขึ้นเพื่อเป็นเครื่องมือคำนวณและจำลองผลตอบแทนส่วนบุคคลเท่านั้น <strong>มิใช่เว็บไซต์ทางการของสถาบันการเงินใดๆ</strong> และไม่มีส่วนเกี่ยวข้องกับการรับฝากเงิน อัตราดอกเบี้ยและเงื่อนไขอาจมีการเปลี่ยนแปลงตามประกาศของแต่ละธนาคาร ผู้ใช้งานโปรดตรวจสอบความถูกต้องโดยตรงกับเว็บไซต์ทางการของธนาคารก่อนตัดสินใจทำธุรกรรมทางการเงินทุกครั้ง</p>
     <p class="text-slate-400">© Thai Savings Calculator. สงวนลิขสิทธิ์สำหรับเครื่องมือคำนวณส่วนบุคคล</p>
@@ -181,7 +181,6 @@
             <span class="w-2 h-8 rounded-full ${item.color || 'bg-indigo-500'}"></span>
             <div>
               <div class="font-semibold text-slate-900">${item.name}</div>
-              <div class="text-xs text-slate-400">${item.bank}</div>
             </div>
           </td>
           <td class="py-4 px-6 text-right font-medium text-slate-600">
