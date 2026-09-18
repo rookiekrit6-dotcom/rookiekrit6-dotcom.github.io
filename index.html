@@ -277,35 +277,78 @@
       </div>
     </div>
 
-    <!-- ส่วนเนื้อหา SEO & FAQ ให้ Google ตรวจเจอคำค้นหา -->
-    <section class="glass-card rounded-2xl p-6 mb-8 text-slate-300 space-y-4 text-sm leading-relaxed">
-      <h2 class="text-lg font-bold text-white mb-2">เกี่ยวกับ thai-savings-calc</h2>
-      <p>
-        <strong class="text-indigo-300">thai-savings-calc</strong> คือเว็บเครื่องมือฟรีสำหรับคำนวณและเปรียบเทียบดอกเบี้ยบัญชีเงินฝากออมทรัพย์ดิจิทัลของธนาคารในประเทศไทย โดยเน้นการคำนวณแบบขั้นบันได (Tiered Interest Rate) ที่แท้จริง เพื่อช่วยให้ผู้ฝากเงินวางแผนจัดสรรเงินออมให้ได้ผลตอบแทนสูงที่สุด
-      </p>
-      
+    <!-- ส่วนเนื้อหาความรู้เชิงลึก (Rich Content สำหรับ AdSense & SEO) -->
+    <section class="glass-card rounded-2xl p-6 mb-8 text-slate-300 space-y-5 text-sm leading-relaxed border border-slate-700/80">
+      <div>
+        <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+          📚 คู่มือและหลักการคำนวณดอกเบี้ยเงินฝากดิจิทัล
+        </h2>
+        <p class="text-slate-300">
+          บัญชีเงินฝากออมทรัพย์ดิจิทัล (Digital Savings Account) คือบัญชีเงินฝากที่ไม่ต้องใช้สมุดคู่ฝาก จัดการทุกอย่างผ่านแอปพลิเคชันของธนาคาร ซึ่งช่วยลดต้นทุนการดำเนินงานของสถาบันการเงิน ทำให้ธนาคารสามารถมอบอัตราดอกเบี้ยที่สูงกว่าบัญชีออมทรัพย์ทั่วไปถึง 3–4 เท่า โดยส่วนใหญ่คิดดอกเบี้ยแบบ <strong>คำนวณรายวันตามยอดคงเหลือจริง</strong> และจ่ายดอกเบี้ยปีละ 2 ครั้ง (ปลายเดือนมิถุนายนและธันวาคม)
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h3 class="font-semibold text-white mb-1.5 text-sm">สูตรคำนวณดอกเบี้ยรายวัน</h3>
+          <p class="text-xs text-slate-400">
+            <code>(เงินต้นคงเหลือ × อัตราดอกเบี้ยต่อปี) ÷ 365</code><br>
+            ระบบจะรวมดอกเบี้ยสะสมทุกวันจนถึงรอบจ่าย ทำให้ยอดดอกเบี้ยขึ้นอยู่กับจำนวนวันที่เงินนอนอยู่ในบัญชีจริง
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h3 class="font-semibold text-white mb-1.5 text-sm">เกณฑ์ภาษีดอกเบี้ยเงินฝาก 15%</h3>
+          <p class="text-xs text-slate-400">
+            หากดอกเบี้ยเงินฝากออมทรัพย์รวมทุกธนาคาร <strong>เกิน 20,000 บาท/ปี</strong> ธนาคารจะนำส่งภาษีหัก ณ ที่จ่าย 15% จากดอกเบี้ยทั้งหมดต่อกรมสรรพากรทันที
+          </p>
+        </div>
+      </div>
+
       <div class="pt-2">
-        <h3 class="font-semibold text-white mb-1">คำถามที่พบบ่อย (FAQ)</h3>
-        <div class="space-y-2 mt-2">
-          <div>
-            <span class="text-white font-medium">Q: ภาษีดอกเบี้ยเงินฝาก 15% คิดอย่างไร?</span>
-            <p class="text-slate-400 text-xs mt-0.5">A: หากได้รับดอกเบี้ยเงินฝากออมทรัพย์ทุกธนาคารรวมกันเกิน 20,000 บาทต่อปี สรรพากรจะหักภาษี ณ ที่จ่าย 15% จากดอกเบี้ยทั้งหมด เว็บ thai-savings-calc มีฟังก์ชันจำลองหักภาษีนี้ให้ทันที</p>
+        <h3 class="font-semibold text-white mb-2">คำถามที่พบบ่อย (FAQ)</h3>
+        <div class="space-y-3">
+          <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/80">
+            <span class="text-indigo-200 font-medium block mb-1">Q: เงินฝากดิจิทัลได้รับความคุ้มครองทางกฎหมายหรือไม่?</span>
+            <p class="text-slate-400 text-xs">A: ได้รับการคุ้มครองตามพระราชบัญญัติสถาบันคุ้มครองเงินฝาก (DPA) ในวงเงินสูงสุด 1 ล้านบาท ต่อ 1 รายผู้ฝาก ต่อ 1 สถาบันการเงิน เช่นเดียวกับบัญชีออมทรัพย์ทั่วไป</p>
           </div>
-          <div>
-            <span class="text-white font-medium">Q: สูตรกระจายเงินฝาก (Split Deposit) ทำงานอย่างไร?</span>
-            <p class="text-slate-400 text-xs mt-0.5">A: ระบบจะคำนวณกระจายเงินของคุณไปยังบัญชีที่ให้อัตราดอกเบี้ยสูงสุดก่อนจนเต็มเพดาน แล้วจึงนำเงินส่วนที่เหลือไปฝากในบัญชีถัดไป เพื่อให้ผลตอบแทนรวมทั้งพอร์ตได้ดอกเบี้ยมากที่สุด</p>
+          <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/80">
+            <span class="text-indigo-200 font-medium block mb-1">Q: ทำไมต้องใช้สูตรกระจายเงินฝาก (Split Deposit Optimizer)?</span>
+            <p class="text-slate-400 text-xs">A: เนื่องจากบัญชีดอกเบี้ยสูงมักจำกัดวงเงินเพดาน (เช่น 10,000 หรือ 50,000 บาทแรก) หากใส่เงินเกินเพดาน อัตราดอกเบี้ยส่วนเกินจะลดลง การกระจายเงินไปใส่หลายๆ บัญชีให้เต็มเพดานดอกเบี้ยสูงจึงสร้างผลตอบแทนได้ดีกว่าฝากที่เดียว</p>
           </div>
         </div>
       </div>
     </section>
   </div>
 
-  <footer class="max-w-4xl mx-auto w-full text-center text-xs text-slate-300 px-4 mt-4 space-y-1.5 relative z-10 leading-relaxed">
-    <p>⚠️ <strong class="text-slate-200">ข้อจำกัดความรับผิดชอบทางกฎหมาย:</strong> เว็บไซต์นี้จัดทำขึ้นเพื่อเป็นเครื่องมือคำนวณและจำลองผลตอบแทนส่วนบุคคลเท่านั้น <strong class="text-slate-200">มิใช่เว็บไซต์ทางการของสถาบันการเงินใดๆ</strong> และไม่มีส่วนเกี่ยวข้องกับการรับฝากเงิน อัตราดอกเบี้ยและเงื่อนไขอาจมีการเปลี่ยนแปลงตามประกาศของแต่ละธนาคาร</p>
-    <p class="text-slate-400">© 2026 thai-savings-calc. All rights reserved.</p>
+  <!-- ส่วน Footer และลิงก์นโยบายข้อตกลง -->
+  <footer class="max-w-4xl mx-auto w-full text-center text-xs text-slate-400 px-4 mt-4 space-y-3 relative z-10 leading-relaxed">
+    <div class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-slate-300">
+      <button onclick="openPolicyModal('privacy')" class="hover:text-indigo-400 transition underline underline-offset-4">นโยบายความเป็นส่วนตัว (Privacy Policy)</button>
+      <span>•</span>
+      <button onclick="openPolicyModal('terms')" class="hover:text-indigo-400 transition underline underline-offset-4">ข้อกำหนดและคำปฏิเสธความรับผิดชอบ (Terms & Disclaimer)</button>
+      <span>•</span>
+      <button onclick="openPolicyModal('about')" class="hover:text-indigo-400 transition underline underline-offset-4">เกี่ยวกับเราและติดต่อ (About Us)</button>
+    </div>
+    
+    <p>⚠️ <strong class="text-slate-300">ข้อจำกัดความรับผิดชอบทางกฎหมาย:</strong> ข้อมูลและตัวเลขผลลัพธ์เป็นเพียงการจำลองเพื่อการวางแผนเบื้องต้นเท่านั้น มิใช่คำแนะนำทางการเงิน และไม่มีส่วนเกี่ยวข้องกับสถาบันการเงินใดๆ</p>
+    <p class="text-slate-500">© 2026 thai-savings-calc. All rights reserved.</p>
   </footer>
 
-  <!-- Modal คู่มือ -->
+  <!-- Modal นโยบายความเป็นส่วนตัวและข้อกำหนด -->
+  <div id="policy-modal" class="fixed inset-0 bg-black/70 backdrop-blur-md hidden flex items-center justify-center p-4 z-50">
+    <div class="glass-card bg-slate-900/95 rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-700 max-h-[85vh] overflow-y-auto">
+      <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-700">
+        <h3 id="policy-title" class="text-lg font-bold text-white"></h3>
+        <button onclick="closePolicyModal()" class="text-slate-400 hover:text-white text-3xl font-bold leading-none p-1">&times;</button>
+      </div>
+      <div id="policy-content" class="text-sm text-slate-300 space-y-3 leading-relaxed"></div>
+      <div class="mt-6 pt-3 border-t border-slate-800 text-right">
+        <button onclick="closePolicyModal()" class="px-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold rounded-xl shadow transition">ปิดหน้าต่าง</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal คู่มือใช้งาน -->
   <div id="guide-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
     <div class="glass-card bg-slate-900/95 rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-700">
       <div class="flex justify-between items-center mb-4">
@@ -339,6 +382,51 @@
   <script>
     let accountsData = [];
     let currentMode = 'compare';
+
+    const policyData = {
+      privacy: {
+        title: 'นโยบายความเป็นส่วนตัว (Privacy Policy)',
+        content: `
+          <p>เว็บไซต์ <strong>thai-savings-calc</strong> ให้ความสำคัญอย่างยิ่งต่อการคุ้มครองข้อมูลส่วนบุคคลของผู้ใช้งานทุกท่าน</p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li><strong>ข้อมูลทางการเงิน:</strong> ระบบการคำนวณทั้งหมดประมวลผลบนเว็บเบราว์เซอร์ของผู้ใช้งานโดยตรง (Client-Side Computation) ไม่มีการส่งข้อมูลตัวเลข ยอดเงินฝาก หรือข้อมูลทางการเงินใดๆ กลับมาจัดเก็บยังเซิร์ฟเวอร์</li>
+            <li><strong>Google Analytics:</strong> เว็บไซต์มีการใช้งาน Google Analytics (GA4) เพื่อวิเคราะห์สถิติจำนวนผู้เข้าชมและพฤติกรรมการใช้งานภาพรวม เพื่อนำมาปรับปรุงระบบ โดยจัดเก็บข้อมูลแบบไม่สามารถระบุตัวตนบุคคลได้ (Anonymized Data)</li>
+            <li><strong>คุกกี้และบริการโฆษณา:</strong> ในอนาคต เว็บไซต์อาจมีการร่วมมือกับแพลตฟอร์มพันธมิตร เช่น Google AdSense ซึ่งอาจมีการใช้คุกกี้ (Cookies) เพื่อแสดงโฆษณาที่ตรงกับความสนใจของผู้ใช้ ผู้ใช้สามารถเลือกปิดการใช้งานคุกกี้ได้ผ่านการตั้งค่าในเบราว์เซอร์</li>
+          </ul>
+        `
+      },
+      terms: {
+        title: 'ข้อกำหนดการใช้งานและคำปฏิเสธความรับผิดชอบ (Terms & Disclaimer)',
+        content: `
+          <p>โปรดอ่านและทำความเข้าใจข้อตกลงและเงื่อนไขการใช้งานก่อนใช้เครื่องมือ:</p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li><strong>วัตถุประสงค์เพื่อการจำลอง:</strong> ข้อมูล อัตราผลตอบแทน และสูตรการคำนวณทั้งหมดบนเว็บไซต์นี้ จัดทำขึ้นเพื่อเป็นเครื่องมือจำลองและอำนวยความสะดวกในการวางแผนทางการเงินเบื้องต้นเท่านั้น มิใช่คำแนะนำทางการเงิน การลงทุน หรือคำแนะนำทางกฎหมาย</li>
+            <li><strong>ความผันผวนของข้อมูล:</strong> อัตราดอกเบี้ยเงินฝาก เงื่อนไขขั้นบันได และเกณฑ์การหักภาษี เป็นไปตามประกาศของแต่ละสถาบันการเงินและหน่วยงานกำกับดูแล ซึ่งอาจมีการเปลี่ยนแปลงได้ตลอดเวลา ผู้ใช้งานควรตรวจสอบข้อมูลที่เป็นทางการกับธนาคารเจ้าของผลิตภัณฑ์อีกครั้งก่อนเปิดบัญชีหรือทำธุรกรรม</li>
+            <li><strong>การจำกัดความรับผิดชอบ:</strong> ผู้พัฒนาเว็บไซต์ไม่รับผิดชอบต่อความเสียหาย ความผิดพลาด หรือการสูญเสียผลประโยชน์ทางการเงินใดๆ ทั้งทางตรงและทางอ้อม ที่เกิดจากการนำข้อมูลหรือผลลัพธ์จากเครื่องมือนี้ไปใช้</li>
+          </ul>
+        `
+      },
+      about: {
+        title: 'เกี่ยวกับเราและช่องทางติดต่อ (About Us & Contact)',
+        content: `
+          <p><strong>thai-savings-calc</strong> เป็นโครงการเครื่องมือเว็บโอเพนซอร์ส (Open Tool) ที่พัฒนาขึ้นโดยมีจุดประสงค์เพื่ออำนวยความสะดวกให้ผู้ฝากเงินในประเทศไทย สามารถเปรียบเทียบผลตอบแทนของบัญชีเงินฝากดิจิทัลได้อย่างเป็นกลาง โปร่งใส และรวดเร็ว</p>
+          <p>เรามุ่งหวังให้ผู้ใช้งานสามารถวางแผนจัดสรรเงินออมส่วนบุคคลได้อย่างมีประสิทธิภาพสูงสุดโดยไม่คิดค่าบริการใดๆ</p>
+          <p class="pt-2">หากท่านพบข้อผิดพลาดของข้อมูลธนาคาร มีข้อเสนอแนะในการปรับปรุง หรือประสงค์จะติดต่อผู้พัฒนา สามารถเปิด Issue หรือติดต่อได้ผ่านหน้าคลังโครงการ <strong>GitHub: thai-savings-calc</strong></p>
+        `
+      }
+    };
+
+    function openPolicyModal(type) {
+      const data = policyData[type];
+      if (!data) return;
+      document.getElementById('policy-title').innerText = data.title;
+      document.getElementById('policy-content').innerHTML = data.content;
+      document.getElementById('policy-modal').classList.remove('hidden');
+    }
+
+    function closePolicyModal() {
+      document.getElementById('policy-modal').classList.add('hidden');
+    }
 
     async function loadData() {
       try {
