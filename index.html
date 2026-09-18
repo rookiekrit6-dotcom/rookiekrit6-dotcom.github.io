@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>เครื่องมือเปรียบเทียบดอกเบี้ยเงินฝากดิจิทัล (Personal Tool)</title>
+  <title>เครื่องมือเปรียบเทียบและจัดพอร์ตดอกเบี้ยเงินฝากดิจิทัล (Personal Tool)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -102,7 +102,7 @@
       100% { transform: translate3d(-65%, -35%, 0) scale(1.1); }
     }
 
-    /* สไตล์กระจก Glassmorphism */
+    /* กระจกเงา Glassmorphism */
     .glass-card {
       background: rgba(18, 24, 38, 0.8);
       backdrop-filter: blur(16px);
@@ -132,7 +132,7 @@
         เครื่องมือคำนวณดอกเบี้ยเงินฝากดิจิทัล
       </h1>
       <p class="text-slate-200 mt-2 text-sm sm:text-base font-normal">
-        เปรียบเทียบผลตอบแทนเงินฝากออมทรัพย์ดอกเบี้ยสูงแบบขั้นบันได
+        เปรียบเทียบและจัดพอร์ตกระจายเงินฝากดอกเบี้ยสูงแบบขั้นบันได
       </p>
       <div id="last-update" class="text-xs text-slate-300 mt-1">อัปเดตข้อมูลล่าสุด: 2026-09-18</div>
       
@@ -145,7 +145,7 @@
     </header>
 
     <!-- ช่องกรอกจำนวนเงิน และ ตัวเลือกภาษี -->
-    <div class="glass-card rounded-2xl p-6 mb-8">
+    <div class="glass-card rounded-2xl p-6 mb-6">
       <label for="deposit-amount" class="block text-sm font-semibold text-slate-100 mb-2">จำนวนเงินที่ต้องการฝาก (บาท)</label>
       <div class="relative rounded-xl">
         <input
@@ -182,11 +182,21 @@
       </div>
     </div>
 
-    <!-- ตารางผลลัพธ์ -->
-    <div class="glass-card rounded-2xl overflow-hidden mb-8">
+    <!-- สวิตช์เลือกโหมดการแสดงผล (USP Feature) -->
+    <div class="flex rounded-xl p-1 bg-slate-900/80 border border-slate-800 mb-6 backdrop-blur-md">
+      <button id="tab-compare" onclick="switchMode('compare')" class="flex-1 py-2.5 px-4 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 bg-indigo-600 text-white shadow-md">
+        📊 เปรียบเทียบรายธนาคาร (ฝากที่เดียว)
+      </button>
+      <button id="tab-optimizer" onclick="switchMode('optimizer')" class="flex-1 py-2.5 px-4 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 text-slate-400 hover:text-slate-200">
+        ✨ สูตรกระจายเงินฝาก (ได้ดอกเบี้ยสูงสุด)
+      </button>
+    </div>
+
+    <!-- โหมด 1: ตารางเปรียบเทียบเดี่ยว (เดิม) -->
+    <div id="section-compare" class="glass-card rounded-2xl overflow-hidden mb-8">
       <div class="px-6 py-4 border-b border-slate-700/80 bg-slate-800/50 flex justify-between items-center">
         <h2 class="font-bold text-white text-base">ผลการเปรียบเทียบดอกเบี้ยต่อปี</h2>
-        <span class="text-xs font-medium text-slate-300" id="sort-indicator">เรียงตามดอกเบี้ยสุทธิสูงสุด</span>
+        <span class="text-xs font-medium text-slate-300">เรียงตามดอกเบี้ยสุทธิสูงสุด</span>
       </div>
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse">
@@ -204,6 +214,37 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- โหมด 2: สูตรกระจายเงินฝากอัจฉริยะ (Optimizer View) -->
+    <div id="section-optimizer" class="hidden space-y-6 mb-8">
+      <!-- การ์ดสรุปยอดดอกเบี้ยพอร์ต -->
+      <div class="glass-card rounded-2xl p-6 border-indigo-500/30 bg-gradient-to-br from-slate-900/90 via-indigo-950/30 to-slate-900/90">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-block mb-2">
+              🚀 พอร์ตที่ให้ผลตอบแทนสูงสุด
+            </span>
+            <div class="text-slate-300 text-sm">ดอกเบี้ยรวมทั้งพอร์ตต่อปี</div>
+            <div id="opt-total-interest" class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mt-1">฿0.00</div>
+          </div>
+          <div class="sm:text-right">
+            <div class="text-slate-300 text-sm">ดอกเบี้ยเฉลี่ยสุทธิ</div>
+            <div id="opt-avg-rate" class="text-2xl font-bold text-white mt-1">0.00%</div>
+            <div id="opt-diff-text" class="text-xs text-indigo-300 mt-1">ดีกว่าฝากที่เดียว +฿0.00/ปี</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- รายการจัดสรรเงินฝากแต่ละบัญชี -->
+      <div class="glass-card rounded-2xl p-6">
+        <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+          📝 แผนการกระจายเงินฝากที่แนะนำ
+        </h3>
+        <div id="opt-plan-list" class="space-y-3">
+          <!-- แผนจัดสรรเงินจะถูกสร้างโดย JS -->
+        </div>
       </div>
     </div>
   </div>
@@ -224,19 +265,19 @@
       <div class="space-y-3 text-sm text-slate-200">
         <div class="flex gap-3 items-start">
           <span class="flex-shrink-0 w-6 h-6 bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 rounded-full flex items-center justify-center font-bold text-xs">1</span>
-          <p><strong class="text-white">กรอกจำนวนเงิน:</strong> ใส่ยอดเงินออมที่คุณต้องการนำไปฝาก หรือคลิกปุ่มตัวเลขด่วนด้านล่างช่องกรอกได้เลย</p>
+          <p><strong class="text-white">กรอกจำนวนเงิน:</strong> ใส่ยอดเงินออมที่คุณต้องการนำไปฝาก หรือคลิกปุ่มตัวเลขด่วน</p>
         </div>
         <div class="flex gap-3 items-start">
           <span class="flex-shrink-0 w-6 h-6 bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 rounded-full flex items-center justify-center font-bold text-xs">2</span>
-          <p><strong class="text-white">ดูผลตอบแทน:</strong> ตารางจะคำนวณและเรียงลำดับธนาคารที่ให้ดอกเบี้ยสุทธิสูงสุดขึ้นมาให้อัตโนมัติ</p>
+          <p><strong class="text-white">โหมดเปรียบเทียบ:</strong> ดูว่าถ้าเอาเงินทั้งก้อนไปฝากธนาคารเดียว ที่ไหนได้ดอกเบี้ยสูงสุด</p>
         </div>
         <div class="flex gap-3 items-start">
           <span class="flex-shrink-0 w-6 h-6 bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 rounded-full flex items-center justify-center font-bold text-xs">3</span>
-          <p><strong class="text-white">คำนวณขั้นบันได:</strong> ระบบจะคำนวณแยกตามวงเงินแต่ละขั้นของแต่ละธนาคารให้อย่างแม่นยำ</p>
+          <p><strong class="text-white">โหมดสูตรกระจายเงินฝาก:</strong> ระบบจะคำนวณแบ่งเงินไปหยอดในบัญชีที่ดอกเบี้ยสูงสุดให้เต็มเพดาน เพื่อให้ได้เงินดอกเบี้ยรวมสูงที่สุด</p>
         </div>
         <div class="flex gap-3 items-start">
           <span class="flex-shrink-0 w-6 h-6 bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 rounded-full flex items-center justify-center font-bold text-xs">4</span>
-          <p><strong class="text-white">หักภาษี ณ ที่จ่าย 15%:</strong> เปิดสวิตช์ภาษีเพื่อจำลองยอดดอกเบี้ยสุทธิหลังหักภาษี กรณีได้รับดอกเบี้ยเกิน 20,000 บาท/ปี</p>
+          <p><strong class="text-white">หักภาษี 15%:</strong> เปิดสวิตช์ภาษีเพื่อดูยอดดอกเบี้ยสุทธิหลังหักภาษี เมื่อดอกเบี้ยรวมเกิน 20,000 บาท/ปี</p>
         </div>
       </div>
       <div class="mt-6 text-right">
@@ -247,6 +288,7 @@
 
   <script>
     let accountsData = [];
+    let currentMode = 'compare';
 
     async function loadData() {
       try {
@@ -281,18 +323,100 @@
       return totalInterest;
     }
 
+    function switchMode(mode) {
+      currentMode = mode;
+      const tabCompare = document.getElementById('tab-compare');
+      const tabOptimizer = document.getElementById('tab-optimizer');
+      const secCompare = document.getElementById('section-compare');
+      const secOptimizer = document.getElementById('section-optimizer');
+
+      if (mode === 'compare') {
+        tabCompare.className = 'flex-1 py-2.5 px-4 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 bg-indigo-600 text-white shadow-md';
+        tabOptimizer.className = 'flex-1 py-2.5 px-4 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 text-slate-400 hover:text-slate-200';
+        secCompare.classList.remove('hidden');
+        secOptimizer.classList.add('hidden');
+      } else {
+        tabOptimizer.className = 'flex-1 py-2.5 px-4 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 bg-indigo-600 text-white shadow-md';
+        tabCompare.className = 'flex-1 py-2.5 px-4 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 text-slate-400 hover:text-slate-200';
+        secCompare.classList.add('hidden');
+        secOptimizer.classList.remove('hidden');
+      }
+      calculate();
+    }
+
+    function calculateOptimizer(totalAmount, isTaxDeducted) {
+      // แตกทุก Tier ของทุกธนาคารออกมาเป็นก้อนๆ
+      let availableSegments = [];
+      accountsData.forEach(acc => {
+        let prevLimit = 0;
+        acc.tiers.forEach((tier, idx) => {
+          availableSegments.push({
+            bankId: acc.id,
+            bankName: acc.name,
+            color: acc.color,
+            rate: tier.rate,
+            capacity: tier.max - prevLimit,
+            allocated: 0,
+            tierIndex: idx
+          });
+          prevLimit = tier.max;
+        });
+      });
+
+      // จัดเรียงก้อน Tier ตามอัตราดอกเบี้ยจากสูงที่สุดลงไป
+      availableSegments.sort((a, b) => b.rate - a.rate);
+
+      let remaining = totalAmount;
+      let totalPortfolioInterest = 0;
+      let bankAllocations = {};
+
+      for (let seg of availableSegments) {
+        if (remaining <= 0) break;
+        let allocateAmount = Math.min(remaining, seg.capacity);
+        if (allocateAmount > 0) {
+          seg.allocated = allocateAmount;
+          let segmentInterest = allocateAmount * (seg.rate / 100);
+          totalPortfolioInterest += segmentInterest;
+          remaining -= allocateAmount;
+
+          if (!bankAllocations[seg.bankName]) {
+            bankAllocations[seg.bankName] = {
+              name: seg.bankName,
+              color: seg.color,
+              amount: 0,
+              interest: 0
+            };
+          }
+          bankAllocations[seg.bankName].amount += allocateAmount;
+          bankAllocations[seg.bankName].interest += segmentInterest;
+        }
+      }
+
+      // ตรวจสอบเงื่อนไขภาษีรวม
+      let netInterest = totalPortfolioInterest;
+      if (isTaxDeducted && netInterest > 20000) {
+        netInterest = netInterest * 0.85;
+      }
+
+      const effectiveRate = totalAmount > 0 ? (netInterest / totalAmount) * 100 : 0;
+      return {
+        totalInterest: netInterest,
+        effectiveRate: effectiveRate,
+        allocations: Object.values(bankAllocations).sort((a, b) => b.amount - a.amount)
+      };
+    }
+
     function calculate() {
       const amount = parseFloat(document.getElementById('deposit-amount').value) || 0;
       const isTaxDeducted = document.getElementById('tax-toggle').checked;
-      const tbody = document.getElementById('result-tbody');
       
+      // 1. คำนวณแบบเดิม (เปรียบเทียบรายธนาคาร)
+      const tbody = document.getElementById('result-tbody');
       const results = accountsData.map(acc => {
         let interest = calculateTierInterest(amount, acc.tiers);
-        
         if (isTaxDeducted && interest > 20000) {
           interest = interest * 0.85;
         }
-
         const effectiveRate = amount > 0 ? (interest / amount) * 100 : 0;
         return {
           ...acc,
@@ -323,6 +447,47 @@
           </td>
         </tr>
       `).join('');
+
+      // 2. คำนวณโหมดจัดพอร์ต (Optimizer)
+      const optResult = calculateOptimizer(amount, isTaxDeducted);
+      document.getElementById('opt-total-interest').innerText = `฿${optResult.totalInterest.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      document.getElementById('opt-avg-rate').innerText = `${optResult.effectiveRate.toFixed(2)}%`;
+
+      const bestSingleBank = results[0] ? results[0].interestYear : 0;
+      const diff = optResult.totalInterest - bestSingleBank;
+      const diffEl = document.getElementById('opt-diff-text');
+      if (diff > 0.5) {
+        diffEl.innerText = `🔥 ได้เพิ่มขึ้นกว่าฝากที่เดียว +฿${diff.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}/ปี`;
+        diffEl.className = 'text-xs font-semibold text-emerald-400 mt-1';
+      } else {
+        diffEl.innerText = `เท่ากับฝากธนาคารเดี่ยวที่ให้ผลตอบแทนสูงสุด`;
+        diffEl.className = 'text-xs text-slate-400 mt-1';
+      }
+
+      const planListEl = document.getElementById('opt-plan-list');
+      if (optResult.allocations.length === 0 || amount === 0) {
+        planListEl.innerHTML = `<div class="text-center py-6 text-slate-400 text-sm">กรุณากรอกจำนวนเงินเพื่อดูสูตรกระจายเงินฝาก</div>`;
+      } else {
+        planListEl.innerHTML = optResult.allocations.map((item, index) => {
+          const percent = amount > 0 ? ((item.amount / amount) * 100).toFixed(1) : 0;
+          return `
+            <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex items-center justify-center text-xs font-bold">${index + 1}</span>
+                <span class="w-2.5 h-6 rounded-full ${item.color || 'bg-indigo-500'}"></span>
+                <div>
+                  <div class="font-bold text-white">${item.name}</div>
+                  <div class="text-xs text-slate-400">สัดส่วน ${percent}% ของเงินทั้งหมด</div>
+                </div>
+              </div>
+              <div class="text-left sm:text-right w-full sm:w-auto">
+                <div class="font-extrabold text-white text-base">฿${item.amount.toLocaleString('th-TH')}</div>
+                <div class="text-xs text-emerald-400 font-medium">รับดอกเบี้ย ~฿${item.interest.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}/ปี</div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
     }
 
     function setAmount(val) {
