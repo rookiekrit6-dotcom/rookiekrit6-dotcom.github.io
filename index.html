@@ -415,6 +415,22 @@
     let accountsData = [];
     let currentMode = 'compare';
 
+    // รายการโลโก้ SVG ประจำธนาคารมาตรฐาน
+    const bankLogos = {
+      "bbl-esavings": "https://raw.githubusercontent.com/omise/banks-logo/master/th/bbl.svg",
+      "ktb-next": "https://raw.githubusercontent.com/omise/banks-logo/master/th/ktb.svg",
+      "kbank-esavings": "https://raw.githubusercontent.com/omise/banks-logo/master/th/kbank.svg",
+      "scb-ez": "https://raw.githubusercontent.com/omise/banks-logo/master/th/scb.svg",
+      "bay-kept": "https://raw.githubusercontent.com/omise/banks-logo/master/th/bay.svg",
+      "ttb-mesave": "https://raw.githubusercontent.com/omise/banks-logo/master/th/ttb.svg",
+      "cimb-chilld": "https://raw.githubusercontent.com/omise/banks-logo/master/th/cimb.svg",
+      "cimb-speedd": "https://raw.githubusercontent.com/omise/banks-logo/master/th/cimb.svg",
+      "kkp-dime": "https://raw.githubusercontent.com/omise/banks-logo/master/th/kkp.svg",
+      "kkp-savvy": "https://raw.githubusercontent.com/omise/banks-logo/master/th/kkp.svg",
+      "lh-byoumax": "https://raw.githubusercontent.com/omise/banks-logo/master/th/lhb.svg",
+      "tcrb-alpha": "https://raw.githubusercontent.com/omise/banks-logo/master/th/tcrb.svg"
+    };
+
     const policyData = {
       privacy: {
         title: 'นโยบายความเป็นส่วนตัว (Privacy Policy)',
@@ -549,6 +565,7 @@
 
           if (!bankAllocations[seg.bankName]) {
             bankAllocations[seg.bankName] = {
+              id: seg.bankId,
               name: seg.bankName,
               color: seg.color,
               amount: 0,
@@ -594,25 +611,30 @@
 
       results.sort((a, b) => b.interestYear - a.interestYear);
 
-      tbody.innerHTML = results.map((item) => `
-        <tr class="hover:bg-slate-800/60 transition-colors">
-          <td class="py-4 px-6 flex items-center gap-3">
-            <span class="w-2.5 h-8 rounded-full ${item.color || 'bg-indigo-500'}"></span>
-            <div>
-              <div class="font-semibold text-white text-sm sm:text-base">${item.name}</div>
-            </div>
-          </td>
-          <td class="py-4 px-6 text-right font-medium text-slate-200">
-            ${item.effectiveRate.toFixed(2)}%
-          </td>
-          <td class="py-4 px-6 text-right font-bold text-emerald-400 text-sm sm:text-base">
-            ฿${item.interestYear.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-          </td>
-          <td class="py-4 px-6 text-right text-slate-300">
-            ฿${item.interestMonth.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-          </td>
-        </tr>
-      `).join('');
+      tbody.innerHTML = results.map((item) => {
+        const logoSrc = bankLogos[item.id] || '';
+        return `
+          <tr class="hover:bg-slate-800/60 transition-colors">
+            <td class="py-3.5 px-6 flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center p-1.5 shadow-sm overflow-hidden flex-shrink-0 ${item.color || 'bg-slate-800'}">
+                ${logoSrc ? `<img src="${logoSrc}" alt="${item.name}" class="w-full h-full object-contain filter brightness-0 invert" />` : `<span class="text-[10px] font-bold text-white">BANK</span>`}
+              </div>
+              <div>
+                <div class="font-semibold text-white text-sm sm:text-base">${item.name}</div>
+              </div>
+            </td>
+            <td class="py-3.5 px-6 text-right font-medium text-slate-200">
+              ${item.effectiveRate.toFixed(2)}%
+            </td>
+            <td class="py-3.5 px-6 text-right font-bold text-emerald-400 text-sm sm:text-base">
+              ฿${item.interestYear.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            </td>
+            <td class="py-3.5 px-6 text-right text-slate-300">
+              ฿${item.interestMonth.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            </td>
+          </tr>
+        `;
+      }).join('');
 
       const optResult = calculateOptimizer(amount, isTaxDeducted);
       document.getElementById('opt-total-interest').innerText = `฿${optResult.totalInterest.toLocaleString('th-TH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
@@ -635,11 +657,14 @@
       } else {
         planListEl.innerHTML = optResult.allocations.map((item, index) => {
           const percent = amount > 0 ? ((item.amount / amount) * 100).toFixed(1) : 0;
+          const logoSrc = bankLogos[item.id] || '';
           return `
             <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
               <div class="flex items-center gap-3">
                 <span class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex items-center justify-center text-xs font-bold">${index + 1}</span>
-                <span class="w-2.5 h-6 rounded-full ${item.color || 'bg-indigo-500'}"></span>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center p-1.5 shadow-sm overflow-hidden flex-shrink-0 ${item.color || 'bg-slate-800'}">
+                  ${logoSrc ? `<img src="${logoSrc}" alt="${item.name}" class="w-full h-full object-contain filter brightness-0 invert" />` : `<span class="text-[10px] font-bold text-white">BANK</span>`}
+                </div>
                 <div>
                   <div class="font-bold text-white">${item.name}</div>
                   <div class="text-xs text-slate-400">สัดส่วน ${percent}% ของเงินทั้งหมด</div>
