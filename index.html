@@ -9,11 +9,11 @@
   <meta name="description" content="thai-savings-calc เว็บเครื่องมือเปรียบเทียบดอกเบี้ยเงินฝากดิจิทัลแบบขั้นบันได และสูตรกระจายเงินฝาก (Split Deposit) คำนวณภาษีดอกเบี้ย 15% ฟรี" />
   <meta name="keywords" content="thai-savings-calc, thai savings calc, คำนวณดอกเบี้ย, เงินฝากดิจิทัล, ดอกเบี้ยเงินฝากสูง, จัดพอร์ตเงินออม, เปรียบเทียบดอกเบี้ยธนาคาร" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://rookiekrit6-dotcom.github.io/thai-savings-calc/" />
+  <link rel="canonical" href="https://rookiekrit6-dotcom.github.io/" />
 
-  <!-- Open Graph / Facebook / X (Social Preview) -->
+  <!-- Open Graph / Social Preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rookiekrit6-dotcom.github.io/thai-savings-calc/" />
+  <meta property="og:url" content="https://rookiekrit6-dotcom.github.io/" />
   <meta property="og:title" content="thai-savings-calc - เครื่องมือคำนวณและจัดพอร์ตดอกเบี้ยเงินฝากดิจิทัล" />
   <meta property="og:description" content="เปรียบเทียบดอกเบี้ยขั้นบันไดทุกธนาคาร พร้อมสูตรกระจายเงินฝากเพื่อผลตอบแทนสูงสุด ใช้งานฟรี" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -27,14 +27,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-SYLQEEQEWC');
   </script>
 
   <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1295475833473709"
-       crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-1295475833473709">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1295475833473709" crossorigin="anonymous"></script>
 
   <!-- Structured Data สำหรับ Google Rich Snippets -->
   <script type="application/ld+json">
@@ -42,7 +40,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "thai-savings-calc",
-    "url": "https://rookiekrit6-dotcom.github.io/thai-savings-calc/",
+    "url": "https://rookiekrit6-dotcom.github.io/",
     "description": "เครื่องมือเปรียบเทียบและคำนวณดอกเบี้ยบัญชีเงินฝากดิจิทัลแบบขั้นบันได พร้อมสูตรกระจายเงินฝากอัตโนมัติ",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "All"
@@ -52,10 +50,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: 'Prompt', sans-serif;
       background-color: #0b0f19;
@@ -64,7 +59,6 @@
       overflow-x: hidden;
       position: relative;
     }
-
     .bg-ambient-container {
       position: fixed;
       top: 0;
@@ -75,7 +69,6 @@
       z-index: 0;
       overflow: hidden;
     }
-
     .glow-orb {
       position: absolute;
       border-radius: 50%;
@@ -86,7 +79,6 @@
       max-width: 90vw;
       max-height: 90vw;
     }
-
     .orb-purple {
       width: 520px;
       height: 520px;
@@ -95,7 +87,6 @@
       left: -5%;
       animation: floatOrb1 18s ease-in-out infinite alternate;
     }
-
     .orb-pink {
       width: 480px;
       height: 480px;
@@ -104,7 +95,6 @@
       right: -5%;
       animation: floatOrb2 22s ease-in-out infinite alternate;
     }
-
     .orb-blue {
       width: 440px;
       height: 440px;
@@ -113,7 +103,6 @@
       left: 40%;
       animation: floatOrb3 20s ease-in-out infinite alternate;
     }
-
     .bg-grid-overlay {
       position: fixed;
       top: 0;
@@ -127,25 +116,21 @@
       pointer-events: none;
       z-index: 0;
     }
-
     @keyframes floatOrb1 {
       0% { transform: translate3d(0, 0, 0) scale(1); }
       50% { transform: translate3d(80px, 90px, 0) scale(1.15); }
       100% { transform: translate3d(40px, 150px, 0) scale(0.95); }
     }
-
     @keyframes floatOrb2 {
       0% { transform: translate3d(0, 0, 0) scale(1); }
       50% { transform: translate3d(-90px, -70px, 0) scale(1.2); }
       100% { transform: translate3d(-40px, -130px, 0) scale(1); }
     }
-
     @keyframes floatOrb3 {
       0% { transform: translate3d(-50%, -50%, 0) scale(1); }
       50% { transform: translate3d(-25%, -20%, 0) scale(0.95); }
       100% { transform: translate3d(-65%, -35%, 0) scale(1.1); }
     }
-
     .glass-card {
       background: rgba(18, 24, 38, 0.85);
       backdrop-filter: blur(16px);
@@ -175,7 +160,7 @@
       <p class="text-slate-200 mt-2 text-sm sm:text-base font-normal">
         เปรียบเทียบและจัดพอร์ตกระจายเงินฝากดอกเบี้ยสูงแบบขั้นบันได
       </p>
-      <div id="last-update" class="text-xs text-slate-300 mt-1">อัปเดตข้อมูลล่าสุด: 2026-09-18</div>
+      <div id="last-update" class="text-xs text-slate-300 mt-1">อัปเดตข้อมูลล่าสุด: 2026-09-19</div>
       
       <div class="mt-4">
         <button onclick="toggleGuide(true)" class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/10 hover:bg-white/20 text-indigo-200 hover:text-white text-xs font-medium rounded-full shadow-sm border border-white/15 transition backdrop-blur-md">
@@ -282,6 +267,48 @@
       </div>
     </div>
 
+    <!-- บล็อกเปรียบเทียบผลตอบแทนจริง 3 รูปแบบ -->
+    <div class="glass-card rounded-2xl p-6 mb-8 border border-slate-700/80">
+      <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+        💡 เทียบชัด ๆ : ออมทรัพย์ธรรมดา vs ฝากประจำ vs เงินฝากดิจิทัล
+      </h3>
+      <p class="text-xs text-slate-400 mb-4">
+        จำลองจากเงินฝากเริ่มต้น 100,000 บาท ระยะเวลาฝาก 1 ปี
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-slate-400">ออมทรัพย์ทั่วไป (สมุดคู่ฝาก)</span>
+            <div class="text-xl font-bold text-slate-300 mt-1">0.25% ต่อปี</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400">
+            รับดอกเบี้ยประมาณ <span class="font-bold text-white">฿250</span>/ปี
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-amber-400">ฝากประจำ 12 เดือน</span>
+            <div class="text-xl font-bold text-white mt-1">0.75% - 0.90%</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400">
+            รับดอกเบี้ยประมาณ <span class="font-bold text-white">฿750 - ฿900</span>/ปี
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/40 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-emerald-400">บัญชีดิจิทัล (e-Savings)</span>
+            <div class="text-xl font-bold text-emerald-400 mt-1">1.25% - 1.70%</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-indigo-900/60 text-xs text-slate-300">
+            รับดอกเบี้ยประมาณ <span class="font-bold text-emerald-300">฿1,250 - ฿1,700</span>/ปี
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ส่วนเนื้อหาความรู้เชิงลึก (Rich Content สำหรับ AdSense & SEO) -->
     <section class="glass-card rounded-2xl p-6 mb-8 text-slate-300 space-y-5 text-sm leading-relaxed border border-slate-700/80">
       <div>
@@ -289,7 +316,7 @@
           📚 คู่มือและหลักการคำนวณดอกเบี้ยเงินฝากดิจิทัล
         </h2>
         <p class="text-slate-300">
-          บัญชีเงินฝากออมทรัพย์ดิจิทัล (Digital Savings Account) คือบัญชีเงินฝากที่ไม่ต้องใช้สมุดคู่ฝาก จัดการทุกอย่างผ่านแอปพลิเคชันของธนาคาร ซึ่งช่วยลดต้นทุนการดำเนินงานของสถาบันการเงิน ทำให้ธนาคารสามารถมอบอัตราดอกเบี้ยที่สูงกว่าบัญชีออมทรัพย์ทั่วไปถึง 3–4 เท่า โดยส่วนใหญ่คิดดอกเบี้ยแบบ <strong>คำนวณรายวันตามยอดคงเหลือจริง</strong> และจ่ายดอกเบี้ยปีละ 2 ครั้ง (ปลายเดือนมิถุนายนและธันวาคม)
+          บัญชีเงินฝากออมทรัพย์ดิจิทัล (Digital Savings Account) คือบัญชีเงินฝากที่ไม่ต้องใช้สมุดคู่ฝาก จัดการทุกอย่างผ่านแอปพลิเคชันของธนาคาร ซึ่งช่วยลดต้นทุนการดำเนินงานของสถาบันการเงิน ทำให้ธนาคารสามารถมอบอัตราดอกเบี้ยที่สูงกว่าบัญชีออมทรัพย์ทั่วไปถึง 3–5 เท่า โดยส่วนใหญ่คิดดอกเบี้ยแบบ <strong>คำนวณรายวันตามยอดคงเหลือจริง</strong> และจ่ายดอกเบี้ยปีละ 2 ครั้ง (ปลายเดือนมิถุนายนและธันวาคม)
         </p>
       </div>
 
@@ -318,7 +345,7 @@
           </div>
           <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800/80">
             <span class="text-indigo-200 font-medium block mb-1">Q: ทำไมต้องใช้สูตรกระจายเงินฝาก (Split Deposit Optimizer)?</span>
-            <p class="text-slate-400 text-xs">A: เนื่องจากบัญชีดอกเบี้ยสูงมักจำกัดวงเงินเพดาน (เช่น 10,000 หรือ 50,000 บาทแรก) หากใส่เงินเกินเพดาน อัตราดอกเบี้ยส่วนเกินจะลดลง การกระจายเงินไปใส่หลายๆ บัญชีให้เต็มเพดานดอกเบี้ยสูงจึงสร้างผลตอบแทนได้ดีกว่าฝากที่เดียว</p>
+            <p class="text-slate-400 text-xs">A: เนื่องจากบัญชีดอกเบี้ยสูงมักจำกัดวงเงินเพดาน (เช่น 10,000 หรือ 100,000 บาทแรก) หากใส่เงินเกินเพดาน อัตราดอกเบี้ยส่วนเกินจะลดลง การกระจายเงินไปใส่หลายๆ บัญชีให้เต็มเพดานดอกเบี้ยสูงจึงสร้างผลตอบแทนได้ดีกว่าฝากที่เดียว</p>
           </div>
         </div>
       </div>
@@ -611,7 +638,7 @@
           return `
             <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
               <div class="flex items-center gap-3">
-                <span class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex items-center justify-center text-xs font-bold">${index + 1}</span>
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex items-center justify-center text-xs font-bold">${index + 1}</span>
                 <span class="w-2.5 h-6 rounded-full ${item.color || 'bg-indigo-500'}"></span>
                 <div>
                   <div class="font-bold text-white">${item.name}</div>
