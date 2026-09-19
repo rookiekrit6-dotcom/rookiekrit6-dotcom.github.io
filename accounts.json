@@ -1,181 +1,124 @@
-[
-  {
-    "id": "lh-byoumax",
-    "name": "LH Bank (B-You Max)",
-    "type": "e-Savings",
-    "bank": "LH Bank",
-    "color": "#009688",
-    "logoText": "LH",
-    "rates": [
-      { "limit": 10000, "rate": 3.00 },
-      { "limit": 100000000, "rate": 0.25 }
-    ],
-    "maxRate": 3.00,
-    "conditions": "3.00% สำหรับ 10,000 บาทแรก"
-  },
-  {
-    "id": "ttb-mesave",
-    "name": "ttb (ME save)",
-    "type": "e-Savings",
-    "bank": "ttb",
-    "color": "#002d62",
-    "logoText": "ttb",
-    "rates": [
-      { "limit": 100000, "rate": 1.80 },
-      { "limit": 1000000, "rate": 1.20 },
-      { "limit": 100000000, "rate": 1.00 }
-    ],
-    "maxRate": 1.80,
-    "conditions": "ต้องมียอดฝากมากกว่าถอนในเดือนนั้นเพื่อรับโบนัส"
-  },
-  {
-    "id": "tcrb-alpha",
-    "name": "ไทยเครดิต (ออมทรัพย์อัลฟา)",
-    "type": "e-Savings",
-    "bank": "ไทยเครดิต",
-    "color": "#0284c7",
-    "logoText": "TCRB",
-    "rates": [
-      { "limit": 500000, "rate": 1.70 },
-      { "limit": 100000000, "rate": 0.40 }
-    ],
-    "maxRate": 1.70,
-    "conditions": "1.70% วงเงินไม่เกิน 5 แสนบาท"
-  },
-  {
-    "id": "kkp-dime",
-    "name": "KKP (Dime! Save)",
-    "type": "e-Savings",
-    "bank": "เกียรตินาคินภัทร",
-    "color": "#582c83",
-    "logoText": "Dime",
-    "rates": [
-      { "limit": 10000, "rate": 3.00 },
-      { "limit": 500000, "rate": 1.20 },
-      { "limit": 100000000, "rate": 0.50 }
-    ],
-    "maxRate": 3.00,
-    "conditions": "3.00% สำหรับ 10,000 บาทแรก เปิดผ่านแอป Dime!"
-  },
-  {
-    "id": "kkp-savvy",
-    "name": "KKP (KKP SAVVY)",
-    "type": "e-Savings",
-    "bank": "เกียรตินาคินภัทร",
-    "color": "#582c83",
-    "logoText": "KKP",
-    "rates": [
-      { "limit": 10000, "rate": 3.00 },
-      { "limit": 200000, "rate": 1.50 },
-      { "limit": 2000000, "rate": 1.55 },
-      { "limit": 5000000, "rate": 1.60 },
-      { "limit": 100000000, "rate": 0.50 }
-    ],
-    "maxRate": 3.00,
-    "conditions": "ขั้นบันไดสูงสุด 1.60% (เมื่อฝาก 2-5 ล้านบาท)"
-  },
-  {
-    "id": "cimb-chilld",
-    "name": "CIMB Thai (Chill D)",
-    "type": "e-Savings",
-    "bank": "CIMB Thai",
-    "color": "#7e111a",
-    "logoText": "CIMB",
-    "rates": [
-      { "limit": 10000, "rate": 0.50 },
-      { "limit": 50000, "rate": 1.80 },
-      { "limit": 100000, "rate": 2.88 },
-      { "limit": 100000000, "rate": 0.20 }
-    ],
-    "maxRate": 2.88,
-    "conditions": "ดอกเบี้ยสูงสุด 2.88% (เฉพาะส่วนที่ฝาก 5 หมื่น - 1 แสนบาท)"
-  },
-  {
-    "id": "cimb-speedd",
-    "name": "CIMB Thai (SPEED D+)",
-    "type": "e-Savings",
-    "bank": "CIMB Thai",
-    "color": "#7e111a",
-    "logoText": "CIMB",
-    "rates": [
-      { "limit": 100000, "rate": 0.80 },
-      { "limit": 3000000, "rate": 1.20 },
-      { "limit": 20000000, "rate": 1.50 },
-      { "limit": 100000000, "rate": 0.20 }
-    ],
-    "maxRate": 1.50,
-    "conditions": "ดอกเบี้ยสูงสุด 1.50% (เฉพาะส่วนที่ฝาก 3 - 20 ล้านบาท)"
-  },
-  {
-    "id": "bay-kept",
-    "name": "กรุงศรี (มีแต่ได้ ออนไลน์)",
-    "type": "e-Savings",
-    "bank": "กรุงศรีอยุธยา",
-    "color": "#54463a",
-    "logoText": "BAY",
-    "rates": [
-      { "limit": 1000000, "rate": 1.50 },
-      { "limit": 2000000, "rate": 1.00 },
-      { "limit": 50000000, "rate": 0.65 },
-      { "limit": 100000000, "rate": 0.25 }
-    ],
-    "maxRate": 1.50,
-    "conditions": "1.50% ไม่เกิน 1 ล้านบาท, จ่ายดอกเบี้ยทุกเดือน"
-  },
-  {
-    "id": "kbank-esavings",
-    "name": "กสิกรไทย (K-eSavings)",
-    "type": "e-Savings",
-    "bank": "กสิกรไทย",
-    "color": "#00a950",
-    "logoText": "KBANK",
-    "rates": [
-      { "limit": 500000, "rate": 1.35 },
-      { "limit": 100000000, "rate": 0.35 }
-    ],
-    "maxRate": 1.35,
-    "conditions": "1.35% ไม่เกิน 5 แสนบาท, คล่องตัวผ่าน K PLUS"
-  },
-  {
-    "id": "bbl-esavings",
-    "name": "กรุงเทพ (e-Savings)",
-    "type": "e-Savings",
-    "bank": "กรุงเทพ",
-    "color": "#1e3a8a",
-    "logoText": "BBL",
-    "rates": [
-      { "limit": 1000000, "rate": 1.35 },
-      { "limit": 100000000, "rate": 0.45 }
-    ],
-    "maxRate": 1.35,
-    "conditions": "1.35% ไม่เกิน 1 ล้านบาท"
-  },
-  {
-    "id": "scb-ez",
-    "name": "ไทยพาณิชย์ (EZ Savings)",
-    "type": "e-Savings",
-    "bank": "ไทยพาณิชย์",
-    "color": "#4e2a84",
-    "logoText": "SCB",
-    "rates": [
-      { "limit": 1000000, "rate": 1.25 },
-      { "limit": 100000000, "rate": 0.35 }
-    ],
-    "maxRate": 1.25,
-    "conditions": "1.25% ไม่เกิน 1 ล้านบาท"
-  },
-  {
-    "id": "ktb-next",
-    "name": "กรุงไทย (NEXT Savings)",
-    "type": "e-Savings",
-    "bank": "กรุงไทย",
-    "color": "#00a3e0",
-    "logoText": "KTB",
-    "rates": [
-      { "limit": 1000000, "rate": 1.50 },
-      { "limit": 100000000, "rate": 0.45 }
-    ],
-    "maxRate": 1.50,
-    "conditions": "1.50% ไม่เกิน 1 ล้านบาท"
-  }
-]
+{
+  "last_updated": "2026-09-19",
+  "accounts": [
+    {
+      "id": "lh-byoumax",
+      "name": "LH Bank (B-You Max)",
+      "color": "bg-teal-500",
+      "tiers": [
+        { "max": 10000, "rate": 3.00 },
+        { "max": 100000000, "rate": 0.25 }
+      ]
+    },
+    {
+      "id": "ttb-mesave",
+      "name": "ttb (ME save)",
+      "color": "bg-blue-600",
+      "tiers": [
+        { "max": 100000, "rate": 1.80 },
+        { "max": 1000000, "rate": 1.20 },
+        { "max": 100000000, "rate": 1.00 }
+      ]
+    },
+    {
+      "id": "tcrb-alpha",
+      "name": "ไทยเครดิต (ออมทรัพย์อัลฟา)",
+      "color": "bg-sky-500",
+      "tiers": [
+        { "max": 500000, "rate": 1.70 },
+        { "max": 100000000, "rate": 0.40 }
+      ]
+    },
+    {
+      "id": "kkp-dime",
+      "name": "KKP (Dime! Save)",
+      "color": "bg-purple-600",
+      "tiers": [
+        { "max": 10000, "rate": 3.00 },
+        { "max": 500000, "rate": 1.20 },
+        { "max": 100000000, "rate": 0.50 }
+      ]
+    },
+    {
+      "id": "kkp-savvy",
+      "name": "KKP (KKP SAVVY)",
+      "color": "bg-purple-700",
+      "tiers": [
+        { "max": 10000, "rate": 3.00 },
+        { "max": 200000, "rate": 1.50 },
+        { "max": 2000000, "rate": 1.55 },
+        { "max": 5000000, "rate": 1.60 },
+        { "max": 100000000, "rate": 0.50 }
+      ]
+    },
+    {
+      "id": "cimb-chilld",
+      "name": "CIMB Thai (Chill D)",
+      "color": "bg-red-600",
+      "tiers": [
+        { "max": 10000, "rate": 0.50 },
+        { "max": 50000, "rate": 1.80 },
+        { "max": 100000, "rate": 2.88 },
+        { "max": 100000000, "rate": 0.20 }
+      ]
+    },
+    {
+      "id": "cimb-speedd",
+      "name": "CIMB Thai (SPEED D+)",
+      "color": "bg-rose-700",
+      "tiers": [
+        { "max": 100000, "rate": 0.80 },
+        { "max": 3000000, "rate": 1.20 },
+        { "max": 20000000, "rate": 1.50 },
+        { "max": 100000000, "rate": 0.20 }
+      ]
+    },
+    {
+      "id": "bay-kept",
+      "name": "กรุงศรี (มีแต่ได้ ออนไลน์)",
+      "color": "bg-amber-500",
+      "tiers": [
+        { "max": 1000000, "rate": 1.50 },
+        { "max": 2000000, "rate": 1.00 },
+        { "max": 50000000, "rate": 0.65 },
+        { "max": 100000000, "rate": 0.25 }
+      ]
+    },
+    {
+      "id": "kbank-esavings",
+      "name": "กสิกรไทย (K-eSavings)",
+      "color": "bg-emerald-600",
+      "tiers": [
+        { "max": 500000, "rate": 1.35 },
+        { "max": 100000000, "rate": 0.35 }
+      ]
+    },
+    {
+      "id": "bbl-esavings",
+      "name": "กรุงเทพ (e-Savings)",
+      "color": "bg-blue-800",
+      "tiers": [
+        { "max": 1000000, "rate": 1.35 },
+        { "max": 100000000, "rate": 0.45 }
+      ]
+    },
+    {
+      "id": "scb-ez",
+      "name": "ไทยพาณิชย์ (EZ Savings)",
+      "color": "bg-violet-700",
+      "tiers": [
+        { "max": 1000000, "rate": 1.25 },
+        { "max": 100000000, "rate": 0.35 }
+      ]
+    },
+    {
+      "id": "ktb-next",
+      "name": "กรุงไทย (NEXT Savings)",
+      "color": "bg-cyan-500",
+      "tiers": [
+        { "max": 1000000, "rate": 1.50 },
+        { "max": 100000000, "rate": 0.45 }
+      ]
+    }
+  ]
+}
